@@ -1,0 +1,93 @@
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  background-image: url("./images/madVikings.png");
+  background-size: cover;
+  background-position: center;
+  font-family: "Dancing Script", "Karla", sans-serif;
+  padding: 2px;
+  text-align: center;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background: gray;
+  color: white;
+}
+.navbar p {
+  cursor: pointer;
+}
+.responsive-header {
+  display: inline-block;
+}
+.header-img {
+  display: flex;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.images {
+  width: 250px;
+}
+
+.images:hover {
+  cursor: pointer;
+  transition: 1s all;
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 150px) {
+  .responsive-img {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+  .header-p {
+    font-size: 1rem;
+    column-count: 1;
+    column-rule: 2px dotted red;
+  }
+}
+h1:hover {
+  color: red;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .responsive-img {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  .header-p {
+    font-size: 1.5rem;
+    column-count: 2;
+    column-rule: 3px dotted red;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .responsive-img {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+  .header-p {
+    font-size: 2rem;
+    column-count: 4;
+    column-rule: 5px dotted red;
+  }
+}
+
+a {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  color: greenyellow;
+  font-size: 2rem;
+  margin: 0 15px 15px 0;
+}
