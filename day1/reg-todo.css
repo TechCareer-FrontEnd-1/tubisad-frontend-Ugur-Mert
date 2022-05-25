@@ -1,0 +1,57 @@
+form {
+  width: 500px;
+  height: auto;
+}
+.register {
+  display: flex;
+  justify-content: center;
+}
+
+h1,
+p {
+  text-align: center;
+}
+
+.reg-btns {
+  display: grid;
+  height: 80px;
+}
+
+.twitter-btn {
+  background-color: #1da1f2;
+  cursor: pointer;
+  border: 1px solid #1b7ebb;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 10px;
+}
+.twitter-btn:hover {
+  background: #1b7ebb;
+}
+
+.facebook-btn {
+  background-color: #4267b2;
+  cursor: pointer;
+  border: 1px solid #1b7ebb;
+  border-radius: 5px;
+  color: white;
+}
+
+.facebook-btn:hover {
+  background-color: #4c7fe3;
+}
+
+.inputs {
+  display: grid;
+  height: 200px;
+  row-gap: 10px;
+}
+
+.phone-numb {
+  margin-top: 10px;
+}
+
+.bottom-btn {
+  display: flex;
+  justify-content: space-around;
+}
