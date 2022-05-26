@@ -1,6 +1,6 @@
 body {
   background-color: rgb(113, 11, 208);
-  font-family: "Karla", sans-serif;
+  font-family: "Mulish", sans-serif;
   font-weight: 700;
 }
 
@@ -15,7 +15,7 @@ body {
   background-position: center;
   opacity: 0.7;
   color: white;
-  font-weight: bolder;
+  font-weight: 800;
 }
 .right-side:hover {
   opacity: 1;
