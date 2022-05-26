@@ -17,6 +17,9 @@ body {
   color: white;
   font-weight: bolder;
 }
+.right-side:hover {
+  opacity: 1;
+}
 
 .left-side {
   background-color: white;
@@ -26,9 +29,12 @@ body {
 .mail-input {
   border: none;
   border-bottom: groove;
+  border-radius: 0;
 }
 
 .icon-bg {
   background: none;
   border: none;
+  border-bottom: groove;
+  border-radius: 0;
 }
