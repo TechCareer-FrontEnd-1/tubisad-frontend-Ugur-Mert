@@ -28,6 +28,6 @@ btnLogin.onclick = function () {
     document.getElementById("attempts").innerHTML =
       "You have " + attempts + " attempts left.";
     document.getElementById("incorrect").innerHTML =
-      "Incorrect phone number or password";
+      "Incorrect e mail or password";
   }
 };
