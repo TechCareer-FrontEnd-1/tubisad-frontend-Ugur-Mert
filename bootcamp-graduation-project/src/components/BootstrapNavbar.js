@@ -8,16 +8,16 @@ import {
   Form,
   Button,
   FormControl,
-  Row,
-  Col,
 } from "react-bootstrap";
+
+import { GiCrossedAxes } from "react-icons/gi";
 
 const BootstrapNavbar = () => {
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar className="opacity-75 fixed-top" bg="dark" expand="lg">
       <Container>
         <Navbar.Brand className="text-light " href="#">
-          Navbar scroll
+          <GiCrossedAxes />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -29,8 +29,14 @@ const BootstrapNavbar = () => {
             <Nav.Link className="text-light " href="#action1">
               Home
             </Nav.Link>
+            <Nav.Link className="text-light " href="#abilities">
+              Abilities
+            </Nav.Link>
+            <Nav.Link className="text-light " href="#projects">
+              Projects
+            </Nav.Link>
             <Nav.Link className="text-light " href="#action2">
-              Link
+              Contact Me
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
