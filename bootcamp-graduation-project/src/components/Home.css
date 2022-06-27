@@ -48,6 +48,11 @@ a {
 
 .section-abilities {
   font-size: 4rem;
+  background-image: url("./Images/online-web-design.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .section-footer {

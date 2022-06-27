@@ -43,10 +43,10 @@ const Home = () => {
       </header>
 
       <main>
-        <section id="abilities" className="section-abilities mt-5 mb-5">
+        <section id="abilities" className="section-abilities p-5  ">
           <Container>
             <Col>
-              <Row className="text-center  ">
+              <Row className="text-center   ">
                 <h1 className="header-text">Abilities</h1>
               </Row>
               <Col className="text-center  mx-auto col-4">
@@ -76,7 +76,7 @@ const Home = () => {
           </Container>
         </section>
         <section id="projects" className="section-projects bg-dark pb-5">
-          <Container className="mt-5">
+          <Container>
             <Col>
               <Row className="text-center text-white ">
                 <h1 className="mt-4 mb-5">PROJECTS</h1>
