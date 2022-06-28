@@ -10,6 +10,8 @@ import {
   FormControl,
 } from "react-bootstrap";
 
+import { Link } from "react-router-dom";
+
 import { GiCrossedAxes } from "react-icons/gi";
 
 const BootstrapNavbar = () => {
@@ -23,21 +25,42 @@ const BootstrapNavbar = () => {
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className=" me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
+            style={{
+              maxHeight: "100px",
+            }}
             navbarScroll
           >
-            <Nav.Link className="text-light " href="#action1">
-              Home
-            </Nav.Link>
+            <p className="navbar-align">
+              <Link
+                style={{
+                  color: "white",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                }}
+                to="/"
+              >
+                Home
+              </Link>
+            </p>
+
             <Nav.Link className="text-light " href="#abilities">
               Abilities
             </Nav.Link>
             <Nav.Link className="text-light " href="#projects">
               Projects
             </Nav.Link>
-            <Nav.Link className="text-light " href="#action2">
-              Contact Me
-            </Nav.Link>
+            <p>
+              <Link
+                style={{
+                  color: "white",
+                  cursor: "pointer",
+                  textDecoration: "none",
+                }}
+                to="contact"
+              >
+                Contact Me
+              </Link>
+            </p>
           </Nav>
           <Form className="d-flex">
             <FormControl

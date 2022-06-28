@@ -82,7 +82,7 @@ const Home = () => {
                 <h1 className="mt-4 mb-5">PROJECTS</h1>
               </Row>
               <Row className="mx-auto text-center ">
-                <Row className="mb-4">
+                <Row className="mb-4 mx-auto">
                   <Col sm={12} md={6} lg={3} className="mb-3">
                     <a
                       href="https://cozy-salmiakki-f49f4b.netlify.app"
@@ -144,7 +144,7 @@ const Home = () => {
                     </a>
                   </Col>
                 </Row>
-                <Row>
+                <Row className="mx-auto">
                   <Col sm={12} md={6} lg={3} className="mb-3">
                     <a
                       href="https://marvelous-duckanoo-65205f.netlify.app"
@@ -216,53 +216,6 @@ const Home = () => {
         </section>
       </main>
 
-      <footer>
-        <section className="bg-dark section-footer ">
-          <Container>
-            <Row className="text-center text-light align-items-center ">
-              <Col className="m-3 ">
-                <Col>
-                  <p>Get in Touch</p>
-                </Col>
-                <Col className="d-flex justify-content-around">
-                  <Button
-                    href="https://www.linkedin.com/in/uğur-mert-özder/"
-                    target="_blank"
-                    rel="noreferrer"
-                    variant="outline-light"
-                    size="lg"
-                  >
-                    <AiOutlineLinkedin />
-                  </Button>
-                  <Button
-                    href="https://github.com/Ugur-Mert"
-                    target="_blank"
-                    rel="noreferrer"
-                    variant="outline-light"
-                    size="lg"
-                  >
-                    <AiOutlineGithub />
-                  </Button>
-                </Col>
-              </Col>
-              <Col className="text-center">
-                <p style={{ fontSize: "4rem" }}>
-                  <GiCrossedAxes />
-                </p>
-              </Col>
-              <Col>
-                <Col className="m-3 ">
-                  <p>HTML5</p>
-                  <p>CSS3</p>
-                  <p>JavaScript</p>
-                  <p>J Query</p>
-                  <p>React</p>
-                </Col>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-      </footer>
       <BackToTopButton />
     </div>
   );
