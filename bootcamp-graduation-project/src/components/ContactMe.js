@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ContactMe.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
 
 export default function ContactMe() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <main className="contact-container p-5">
+    <main className="contact-container  p-5">
       <Container>
-        <Row className="text-center   ">
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Email sent successfully!</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Footer>
+            <Col className="text-center ">
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+            </Col>
+          </Modal.Footer>
+        </Modal>
+        <Row className="text-center  ">
           <p className="m-3 fs-1">CONTACT ME</p>
         </Row>
-        <Col className="mx-auto col-6 bg-secondary  rounded">
+        <Col className="mx-auto col-6 bg-secondary   rounded">
           <Row className="mx-auto">
             <Row
               style={{
@@ -22,7 +40,7 @@ export default function ContactMe() {
             >
               <Form>
                 <Form.Group controlId="exampleForm.ControlInput1">
-                  <Row className="mb-3">
+                  <Row className="mb-3 mt-5">
                     <Col>
                       <Form.Control type="text" placeholder="Name" />
                     </Col>
@@ -51,16 +69,20 @@ export default function ContactMe() {
                     rows={3}
                     placeholder="Your Message"
                   />
+                  <Row className="mx-auto mt-5 col-6 ">
+                    <Col className=" text-center">
+                      <Button
+                        onClick={handleShow}
+                        variant="outline-dark"
+                        className="mb-5"
+                      >
+                        Send
+                      </Button>
+                    </Col>
+                  </Row>
                 </Form.Group>
               </Form>
             </Row>
-          </Row>
-          <Row className="mx-auto col-6 ">
-            <Col className=" text-center">
-              <Button variant="outline-dark" className="mb-5">
-                Send
-              </Button>
-            </Col>
           </Row>
         </Col>
       </Container>

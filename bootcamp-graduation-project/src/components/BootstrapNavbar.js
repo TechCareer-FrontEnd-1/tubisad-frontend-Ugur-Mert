@@ -5,6 +5,8 @@ import {
   Navbar,
   Container,
   Nav,
+  Col,
+  Row,
   Form,
   Button,
   FormControl,
@@ -16,52 +18,80 @@ import { GiCrossedAxes } from "react-icons/gi";
 
 const BootstrapNavbar = () => {
   return (
-    <Navbar className="opacity-75 fixed-top" bg="dark" expand="lg">
+    <Navbar className="opacity-75 fixed-top fs-5" bg="dark" expand="lg">
       <Container>
-        <Navbar.Brand className="text-light " href="#">
+        <p className="text-light me-3 ">
           <GiCrossedAxes />
-        </Navbar.Brand>
+        </p>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className=" me-auto my-2 my-lg-0"
+            className=" me-auto my-2 text-center  my-lg-0"
             style={{
               maxHeight: "100px",
             }}
             navbarScroll
           >
-            <p className="navbar-align">
-              <Link
-                style={{
-                  color: "white",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                }}
-                to="/"
-              >
-                Home
-              </Link>
-            </p>
-
-            <Nav.Link className="text-light " href="#abilities">
-              Abilities
-            </Nav.Link>
-            <Nav.Link className="text-light " href="#projects">
-              Projects
-            </Nav.Link>
-            <p>
-              <Link
-                style={{
-                  color: "white",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                }}
-                to="contact"
-              >
-                Contact Me
-              </Link>
-            </p>
+            <Col className="me-3 nav-links">
+              <p>
+                <Link
+                  style={{
+                    color: "white",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                  to="/"
+                >
+                  Home
+                </Link>
+              </p>
+            </Col>
+            <Col className="me-3 text-light nav-links">
+              <p>
+                <a
+                  href="#abilities"
+                  style={{
+                    color: "white",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  {" "}
+                  Abilities
+                </a>
+              </p>
+            </Col>
+            <Col className="me-3 text-light nav-links">
+              <p>
+                <a
+                  href="#projects"
+                  style={{
+                    color: "white",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                >
+                  {" "}
+                  Projects
+                </a>
+              </p>
+            </Col>
+            <Col className="me-3 text-light nav-links">
+              <p>
+                <Link
+                  style={{
+                    color: "white",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                  to="contact"
+                >
+                  Contact
+                </Link>
+              </p>
+            </Col>
           </Nav>
+
           <Form className="d-flex">
             <FormControl
               type="search"

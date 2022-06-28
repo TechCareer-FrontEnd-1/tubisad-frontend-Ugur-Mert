@@ -2,7 +2,11 @@ import React from "react";
 import "./Home.css";
 
 import { GiCrossedAxes } from "react-icons/gi";
-import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
+import {
+  AiOutlineLinkedin,
+  AiOutlineGithub,
+  AiOutlineMail,
+} from "react-icons/ai";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
@@ -35,6 +39,14 @@ export default function Footer() {
                   size="lg"
                 >
                   <AiOutlineGithub />
+                </Button>
+                <Button variant="outline-light" size="lg">
+                  <a
+                    className="text-white"
+                    href="mailto:u.mert.ozder@gmail.com"
+                  >
+                    <AiOutlineMail />
+                  </a>
                 </Button>
               </Col>
             </Col>
