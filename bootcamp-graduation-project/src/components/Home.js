@@ -12,16 +12,12 @@ import ToDoApp from "./Images/ToDoApp.png";
 import TravelJournal from "./Images/TravelJournal.png";
 import ShoppingCart from "./Images/ShoppingCart.png";
 import Frontend from "./Images/Frontend.jpg";
+import Ecommerce from "./Images/Ecommerce.png";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Card, Button, Row, Col } from "react-bootstrap";
+import { Container, Card, Row, Col, Nav } from "react-bootstrap";
 
-import { GiCrossedAxes } from "react-icons/gi";
-import {
-  AiOutlineHtml5,
-  AiOutlineLinkedin,
-  AiOutlineGithub,
-} from "react-icons/ai";
+import { AiOutlineHtml5 } from "react-icons/ai";
 import { DiCss3, DiJavascript1, DiJqueryLogo, DiReact } from "react-icons/di";
 
 const Home = () => {
@@ -210,10 +206,28 @@ const Home = () => {
                     </a>
                   </Col>
                 </Row>
+                <Row className="mx-auto text-center">
+                  <Col sm={12} md={6} lg={3} className="mb-3 mt-3 ">
+                    <a
+                      href="https://endearing-sopapillas-d4aa18.netlify.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Card className="h-100 ">
+                        <Card.Img variant="top" src={Ecommerce} />
+                        <Card.Body>
+                          <Card.Title>E Commerce</Card.Title>
+                          <Card.Text>Let's shop</Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </a>
+                  </Col>
+                </Row>
               </Row>
             </Col>
           </Container>
         </section>
+        <section className="section-tab"></section>
       </main>
 
       <BackToTopButton />
