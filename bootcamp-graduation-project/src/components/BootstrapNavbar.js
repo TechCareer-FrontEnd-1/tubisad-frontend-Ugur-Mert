@@ -6,7 +6,6 @@ import {
   Container,
   Nav,
   Col,
-  Row,
   Form,
   Button,
   FormControl,
@@ -15,6 +14,7 @@ import {
 import { Link } from "react-router-dom";
 
 import { GiCrossedAxes } from "react-icons/gi";
+import { CgProfile } from "react-icons/cg";
 
 const BootstrapNavbar = () => {
   return (
@@ -23,7 +23,7 @@ const BootstrapNavbar = () => {
         <p className="text-light me-3 ">
           <GiCrossedAxes />
         </p>
-        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Toggle aria-controls="navbarScroll " />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className=" me-auto my-2 text-center  my-lg-0"
@@ -32,7 +32,7 @@ const BootstrapNavbar = () => {
             }}
             navbarScroll
           >
-            <Col className="me-3 nav-links">
+            <Col className="me-3  ">
               <p>
                 <Link
                   style={{
@@ -46,37 +46,22 @@ const BootstrapNavbar = () => {
                 </Link>
               </p>
             </Col>
-            <Col className="me-3 text-light nav-links">
+            <Col className="me-3 col-lg-5 col-md-12 text-center text-light ">
               <p>
-                <a
-                  href="#abilities"
+                <Link
                   style={{
                     color: "white",
                     cursor: "pointer",
                     textDecoration: "none",
                   }}
+                  to="about"
                 >
-                  {" "}
-                  Abilities
-                </a>
+                  About Me
+                </Link>
               </p>
             </Col>
-            <Col className="me-3 text-light nav-links">
-              <p>
-                <a
-                  href="#projects"
-                  style={{
-                    color: "white",
-                    cursor: "pointer",
-                    textDecoration: "none",
-                  }}
-                >
-                  {" "}
-                  Projects
-                </a>
-              </p>
-            </Col>
-            <Col className="me-3 text-light nav-links">
+
+            <Col className="me-3 text-center text-light nav-links">
               <p>
                 <Link
                   style={{
@@ -92,15 +77,10 @@ const BootstrapNavbar = () => {
             </Col>
           </Nav>
 
-          <Form className="d-flex">
-            <FormControl
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-light">Search</Button>
-          </Form>
+          <p className="text-white fs-4">
+            {" "}
+            <CgProfile />{" "}
+          </p>
         </Navbar.Collapse>
       </Container>
     </Navbar>

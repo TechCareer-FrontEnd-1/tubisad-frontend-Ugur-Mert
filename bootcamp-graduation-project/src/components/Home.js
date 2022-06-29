@@ -13,9 +13,10 @@ import TravelJournal from "./Images/TravelJournal.png";
 import ShoppingCart from "./Images/ShoppingCart.png";
 import Frontend from "./Images/Frontend.jpg";
 import Ecommerce from "./Images/Ecommerce.png";
+import FirebaseToDoApp from "./Images/FirebaseToDoApp.png";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Card, Row, Col, Nav } from "react-bootstrap";
+import { Container, Card, Row, Col } from "react-bootstrap";
 
 import { AiOutlineHtml5 } from "react-icons/ai";
 import { DiCss3, DiJavascript1, DiJqueryLogo, DiReact } from "react-icons/di";
@@ -27,8 +28,10 @@ const Home = () => {
         <section className="section-welcome p-5">
           <Container>
             <Col>
-              <Row className="text-center text-white ">
-                <h1 className="header-text">Welcome to my personal website!</h1>
+              <Row className="text-center mt-3 text-white ">
+                <h1 className="header-text ">
+                  Welcome to my personal website!
+                </h1>
               </Row>
               <Col className="text-center mt-3">
                 <img className="home-img" src={Frontend} alt="fronted" />
@@ -206,8 +209,23 @@ const Home = () => {
                     </a>
                   </Col>
                 </Row>
-                <Row className="mx-auto text-center">
-                  <Col sm={12} md={6} lg={3} className="mb-3 mt-3 ">
+                <Row className="mx-auto text-center mt-3 mb-3">
+                  <Col sm={12} md={6} lg={3} className="mb-3">
+                    <a
+                      href="https://ornate-daifuku-c793b5.netlify.app"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Card className="h-100 ">
+                        <Card.Img variant="top" src={FirebaseToDoApp} />
+                        <Card.Body>
+                          <Card.Title>ToDo App</Card.Title>
+                          <Card.Text>Firebase Todo</Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </a>
+                  </Col>
+                  <Col sm={12} md={6} lg={3} className="mb-3">
                     <a
                       href="https://endearing-sopapillas-d4aa18.netlify.app/"
                       target="_blank"

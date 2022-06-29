@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 import { AiOutlineArrowUp } from "react-icons/ai";
 
