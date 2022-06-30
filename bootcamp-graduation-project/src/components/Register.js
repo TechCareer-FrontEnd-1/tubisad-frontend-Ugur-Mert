@@ -7,6 +7,7 @@ import { register } from "../firebase";
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,25 +49,29 @@ export default function Register() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-              </Form.Group>
-
-              {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Confirm Password</Form.Label>
                 <Form.Control
+                  className="mt-3"
                   type="password"
                   placeholder="Password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-              </Form.Group> */}
+              </Form.Group>
 
-              <Button
-                disabled={!email || !password}
-                variant="outline-light"
-                type="submit"
-              >
-                Register
-              </Button>
+              <Col className="text-center">
+                <Button
+                  disabled={
+                    !email ||
+                    !password ||
+                    !confirmPassword ||
+                    password !== confirmPassword
+                  }
+                  variant="outline-light"
+                  type="submit"
+                >
+                  Register
+                </Button>
+              </Col>
             </Form>
           </Col>
         </Row>
