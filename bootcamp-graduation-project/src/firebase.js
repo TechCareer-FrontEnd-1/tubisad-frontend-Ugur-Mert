@@ -43,6 +43,7 @@ export const register = async (email, password) => {
 export const login = async (email, password) => {
   try {
     const { user } = await signInWithEmailAndPassword(auth, email, password);
+    toast.success("Welcome!");
     return user;
   } catch (error) {
     toast.error(error.message);

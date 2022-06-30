@@ -47,9 +47,16 @@ export default function UpdateProfile() {
             alignItems: "center",
             minHeight: "50vh",
           }}
-          className="mx-auto  "
+          className="mx-auto  col-12 "
         >
-          <Col className="col-6 mx-auto bg-light text-black rounded p-5">
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={6}
+            className="col-12 mx-auto bg-light text-black rounded p-5"
+          >
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicText">
                 <Form.Label>Name - Surname</Form.Label>
@@ -86,7 +93,14 @@ export default function UpdateProfile() {
               </Form.Group>
             </Form>
           </Col>
-          <Col className="col-6 mx-auto bg-light text-black rounded p-5">
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={6}
+            className="col-12 mx-auto bg-light text-black rounded p-5"
+          >
             <Form onSubmit={handleResetSubmit}>
               <Form.Group className="mb-3" controlId="formBasicPasswords">
                 <Form.Label>Change Password</Form.Label>

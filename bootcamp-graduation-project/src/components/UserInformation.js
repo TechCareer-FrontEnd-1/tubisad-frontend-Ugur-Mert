@@ -18,9 +18,16 @@ export default function UserInformation() {
               alignItems: "center",
               minHeight: "60vh",
             }}
-            className="mb-5 mt-5 p-5"
+            className="mb-5 mt-5 p-5  col-12"
           >
-            <Col className="col-6 mx-auto bg-light text-black rounded mb-4 p-5">
+            <Col
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+              xl={6}
+              className="col-6 mx-auto bg-light mx-auto text-black rounded mb-4 p-5"
+            >
               <Row className="align-items-center  text-center">
                 <Col className="align-items-center ">
                   {user.photoURL && (
@@ -34,17 +41,12 @@ export default function UserInformation() {
                 </Col>
               </Row>
               <Row className="mt-3">
-                <Col className="col-6">
-                  <Col>
-                    <p>Email:</p>
-                  </Col>
-                  <Col>
-                    <p>Name - Surname :</p>
-                  </Col>
+                <Col xs={12} sm={12} md={12} lg={6}>
+                  Email <br /> {user.email}
                 </Col>
-                <Col className="col-6">
-                  <Col>{user.email && <p>{user.email}</p>}</Col>
-                  <Col>{user.displayName && <p>{user.displayName}</p>}</Col>
+                <Col xs={12} sm={12} md={12} lg={6}>
+                  Name - Surname <br />
+                  {user.displayName}
                 </Col>
               </Row>
             </Col>

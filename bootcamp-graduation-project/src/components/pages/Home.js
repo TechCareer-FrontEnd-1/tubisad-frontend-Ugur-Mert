@@ -19,7 +19,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Card, Row, Col } from "react-bootstrap";
 
 import { AiOutlineHtml5 } from "react-icons/ai";
-import { DiCss3, DiJavascript1, DiJqueryLogo, DiReact } from "react-icons/di";
+import {
+  DiCss3,
+  DiJavascript1,
+  DiJqueryLogo,
+  DiReact,
+  DiGithubBadge,
+} from "react-icons/di";
 
 const Home = () => {
   return (
@@ -48,17 +54,20 @@ const Home = () => {
               <Row className="text-center   ">
                 <h1 className="header-text">Abilities</h1>
               </Row>
-              <Col className="text-center  mx-auto col-4">
+              <Col className="text-center  mx-auto col-12">
+                <DiReact />
+              </Col>
+              <Col className="text-center  mx-auto col-3">
                 <Row>
                   <Col>
                     <DiJqueryLogo />
                   </Col>
                   <Col>
-                    <DiReact />
+                    <DiGithubBadge />
                   </Col>
                 </Row>
               </Col>
-              <Col className="text-center mx-auto col-6">
+              <Col className="text-center mx-auto col-4">
                 <Row>
                   <Col>
                     <AiOutlineHtml5 />
