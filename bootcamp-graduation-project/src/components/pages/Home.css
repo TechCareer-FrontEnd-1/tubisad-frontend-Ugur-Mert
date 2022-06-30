@@ -3,7 +3,7 @@ body {
 }
 
 .section-welcome {
-  background-image: url("./Images/HomeBg.jpg");
+  background-image: url("../Images/HomeBg.jpg");
   background-size: cover;
   background-position: 50% 50%;
   z-index: -1;
@@ -48,7 +48,7 @@ a {
 
 .section-abilities {
   font-size: 4rem;
-  background-image: url("./Images/online-web-design.png");
+  background-image: url("../Images/online-web-design.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

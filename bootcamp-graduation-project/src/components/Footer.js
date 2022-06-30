@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css";
+import "./pages/Home.css";
 
 import { GiCrossedAxes } from "react-icons/gi";
 import {
@@ -9,7 +9,7 @@ import {
 } from "react-icons/ai";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 export default function Footer() {
   return (

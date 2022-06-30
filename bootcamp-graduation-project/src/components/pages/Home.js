@@ -1,19 +1,19 @@
 import React from "react";
 import "./Home.css";
 
-import BackToTopButton from "./BackToTopButton";
+import BackToTopButton from "../BackToTopButton";
 
-import CoinApp from "./Images/CoinApp.png";
-import MovieApp from "./Images/MovieApp.png";
-import SimonGame from "./Images/SimonGame.png";
-import Tenzi from "./Images/Tenzi.png";
-import MemeGenerator from "./Images/MemeGenerator.png";
-import ToDoApp from "./Images/ToDoApp.png";
-import TravelJournal from "./Images/TravelJournal.png";
-import ShoppingCart from "./Images/ShoppingCart.png";
-import Frontend from "./Images/Frontend.jpg";
-import Ecommerce from "./Images/Ecommerce.png";
-import FirebaseToDoApp from "./Images/FirebaseToDoApp.png";
+import CoinApp from "../Images/CoinApp.png";
+import MovieApp from "../Images/MovieApp.png";
+import SimonGame from "../Images/SimonGame.png";
+import Tenzi from "../Images/Tenzi.png";
+import MemeGenerator from "../Images/MemeGenerator.png";
+import ToDoApp from "../Images/ToDoApp.png";
+import TravelJournal from "../Images/TravelJournal.png";
+import ShoppingCart from "../Images/ShoppingCart.png";
+import Frontend from "../Images/Frontend.jpg";
+import Ecommerce from "../Images/Ecommerce.png";
+import FirebaseToDoApp from "../Images/FirebaseToDoApp.png";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Card, Row, Col } from "react-bootstrap";
