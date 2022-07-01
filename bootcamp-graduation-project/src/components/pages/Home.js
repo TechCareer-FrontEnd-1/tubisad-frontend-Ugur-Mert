@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 
 import BackToTopButton from "../BackToTopButton";
@@ -18,6 +18,9 @@ import FirebaseToDoApp from "../Images/FirebaseToDoApp.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Card, Row, Col } from "react-bootstrap";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 import { AiOutlineHtml5 } from "react-icons/ai";
 import {
   DiCss3,
@@ -28,6 +31,10 @@ import {
 } from "react-icons/di";
 
 const Home = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1200 });
+  }, []);
+
   return (
     <div>
       <header className="align-items-center  ">
@@ -81,6 +88,7 @@ const Home = () => {
             </Col>
           </Container>
         </section>
+
         <section id="projects" className="section-projects bg-dark pb-5">
           <Container>
             <Col>
@@ -95,7 +103,12 @@ const Home = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Card className="h-100">
+                      <Card
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        className="h-100"
+                      >
                         <Card.Img variant="top" src={TravelJournal} />
                         <Card.Body>
                           <Card.Title>Travel Journal</Card.Title>
@@ -104,13 +117,19 @@ const Home = () => {
                       </Card>
                     </a>
                   </Col>
+
                   <Col sm={12} md={6} lg={3} className="mb-3">
                     <a
                       href="https://deluxe-sfogliatella-61bfd1.netlify.app"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Card className="h-100">
+                      <Card
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        className="h-100"
+                      >
                         <Card.Img variant="top" src={ToDoApp} />
                         <Card.Body>
                           <Card.Title>ToDo App</Card.Title>
@@ -125,7 +144,12 @@ const Home = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Card className="h-100">
+                      <Card
+                        data-aos="fade-left"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        className="h-100"
+                      >
                         <Card.Img variant="top" src={MemeGenerator} />
                         <Card.Body>
                           <Card.Title>Meme Generator</Card.Title>
@@ -140,7 +164,12 @@ const Home = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Card className="h-100">
+                      <Card
+                        data-aos="fade-left"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        className="h-100"
+                      >
                         <Card.Img variant="top" src={SimonGame} />
                         <Card.Body>
                           <Card.Title>Simon Game</Card.Title>
@@ -157,7 +186,12 @@ const Home = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Card className="h-100">
+                      <Card
+                        data-aos="fade-left"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        className="h-100"
+                      >
                         <Card.Img variant="top" src={Tenzi} />
                         <Card.Body>
                           <Card.Title>Tenzi!</Card.Title>
@@ -174,7 +208,12 @@ const Home = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Card className="h-100">
+                      <Card
+                        data-aos="fade-left"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        className="h-100"
+                      >
                         <Card.Img variant="top" src={MovieApp} />
                         <Card.Body>
                           <Card.Title>Movie App</Card.Title>
@@ -191,7 +230,12 @@ const Home = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Card className="h-100">
+                      <Card
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        className="h-100"
+                      >
                         <Card.Img variant="top" src={CoinApp} />
                         <Card.Body>
                           <Card.Title>Coin App</Card.Title>
@@ -206,7 +250,12 @@ const Home = () => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Card className="h-100 ">
+                      <Card
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                        className="h-100 "
+                      >
                         <Card.Img variant="top" src={ShoppingCart} />
                         <Card.Body>
                           <Card.Title>Shopping Cart</Card.Title>
@@ -216,7 +265,12 @@ const Home = () => {
                     </a>
                   </Col>
                 </Row>
-                <Row className="mx-auto text-center mt-3 mb-3">
+                <Row
+                  data-aos="fade-right"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                  className="mx-auto text-center mt-3 mb-3"
+                >
                   <Col sm={12} md={6} lg={3} className="mb-3">
                     <a
                       href="https://ornate-daifuku-c793b5.netlify.app"
@@ -252,6 +306,7 @@ const Home = () => {
             </Col>
           </Container>
         </section>
+
         <section className="section-tab"></section>
       </main>
 
