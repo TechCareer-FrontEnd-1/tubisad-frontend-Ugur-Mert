@@ -31,8 +31,8 @@ const BootstrapNavbar = () => {
 
   if (show) {
     var currentDate = new Date();
-    var currentHour = currentDate.getHours();
-    var currentMinute = currentDate.getMinutes();
+    var currentHour = String(currentDate.getHours()).padStart(2, "0"); //currentDate.getHours();
+    var currentMinute = String(currentDate.getMinutes()).padStart(2, "0"); //currentDate.getMinutes();
     console.log(Date().toLocaleString());
   }
 
@@ -102,7 +102,7 @@ const BootstrapNavbar = () => {
             <Col lg={5} className="me-3 text-center text-light ">
               {show ? (
                 <p>
-                  {currentHour} : {currentMinute}
+                  {currentHour.toLocaleString()}: {currentMinute}
                 </p>
               ) : (
                 ""
