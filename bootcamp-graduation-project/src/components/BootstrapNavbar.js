@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav, Col, Row, Button } from "react-bootstrap";
@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 import { GiCrossedAxes } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
+import { FaRegClock } from "react-icons/fa";
 
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../firebase";
@@ -26,6 +27,14 @@ const BootstrapNavbar = () => {
     });
   };
 
+  const [show, setShow] = useState(false);
+
+  console.log(Date().toLocaleString());
+
+  var currentDate = new Date();
+  var currentHour = currentDate.getHours();
+  var currentMinute = currentDate.getMinutes();
+
   return (
     <Navbar className="opacity-75 fixed-top fs-5" bg="dark" expand="lg">
       <Container>
@@ -33,7 +42,7 @@ const BootstrapNavbar = () => {
           <GiCrossedAxes />
         </p>
         <Navbar.Toggle aria-controls="navbarScroll " />
-        <Navbar.Collapse id="navbarScroll" className="">
+        <Navbar.Collapse id="navbarScroll" className=" text-center mx-auto ">
           <Nav
             className=" me-auto my-2 text-center  my-lg-0"
             style={{
@@ -55,7 +64,7 @@ const BootstrapNavbar = () => {
                 </Link>
               </p>
             </Col>
-            <Col className="me-3 col-lg-5 col-md-12 text-center text-light ">
+            <Col className="me-3 col-lg-5 text-center text-light ">
               <p>
                 <Link
                   style={{
@@ -70,7 +79,7 @@ const BootstrapNavbar = () => {
               </p>
             </Col>
 
-            <Col className="me-3 text-center text-light nav-links">
+            <Col className="me-3 text-center text-light">
               <p>
                 <Link
                   style={{
@@ -83,6 +92,20 @@ const BootstrapNavbar = () => {
                   Contact
                 </Link>
               </p>
+            </Col>
+            <Col className="me-3 text-center text-light">
+              <p>
+                <FaRegClock onClick={() => setShow(!show)} />
+              </p>
+            </Col>
+            <Col lg={5} className="me-3 text-center text-light ">
+              {show ? (
+                <p>
+                  {currentHour} : {currentMinute}
+                </p>
+              ) : (
+                ""
+              )}
             </Col>
           </Nav>
 
