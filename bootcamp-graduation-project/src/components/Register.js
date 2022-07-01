@@ -26,7 +26,12 @@ export default function Register() {
           }}
           className="mx-auto  "
         >
-          <Col className="col-6 mx-auto bg-dark text-white rounded p-5">
+          <Col
+            sm={12}
+            md={12}
+            lg={6}
+            className=" mx-auto bg-dark text-white rounded p-5"
+          >
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>

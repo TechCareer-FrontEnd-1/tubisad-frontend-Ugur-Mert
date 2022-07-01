@@ -39,7 +39,7 @@ export default function ContactMe() {
         <Row className="text-center  ">
           <p className="m-3 fs-1">CONTACT ME</p>
         </Row>
-        <Col className="mx-auto col-6 bg-secondary   rounded">
+        <Col sm={12} md={12} lg={6} className="mx-auto bg-secondary   rounded">
           <Row className="mx-auto">
             <Row
               style={{
