@@ -29,11 +29,12 @@ const BootstrapNavbar = () => {
 
   const [show, setShow] = useState(false);
 
-  console.log(Date().toLocaleString());
-
-  var currentDate = new Date();
-  var currentHour = currentDate.getHours();
-  var currentMinute = currentDate.getMinutes();
+  if (show) {
+    var currentDate = new Date();
+    var currentHour = currentDate.getHours();
+    var currentMinute = currentDate.getMinutes();
+    console.log(Date().toLocaleString());
+  }
 
   return (
     <Navbar className="opacity-75 fixed-top fs-5" bg="dark" expand="lg">
