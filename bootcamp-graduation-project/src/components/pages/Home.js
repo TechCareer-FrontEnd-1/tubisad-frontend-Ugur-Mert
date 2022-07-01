@@ -22,6 +22,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 import { AiOutlineHtml5 } from "react-icons/ai";
+import { GiCampingTent, GiCoffeeCup, GiJewelCrown } from "react-icons/gi";
 import {
   DiCss3,
   DiJavascript1,
@@ -307,7 +308,34 @@ const Home = () => {
           </Container>
         </section>
 
-        <section className="section-tab"></section>
+        <section className="section-facts">
+          <Container>
+            <Row className="text-center mb-4">
+              <h1 className="mb-5 mt-3">Interesting Facts</h1>
+              <Col>
+                <p className="fs-1">
+                  <GiJewelCrown />
+                </p>
+                <p className="fs-3">10</p>
+                <p>PROJECT</p>
+              </Col>
+              <Col>
+                <p className="fs-1">
+                  <GiCoffeeCup />
+                </p>
+                <p className="fs-3">23</p>
+                <p>Cup of Coffee</p>
+              </Col>
+              <Col>
+                <p className="fs-1">
+                  <GiCampingTent />
+                </p>
+                <p className="fs-3">48</p>
+                <p>Hour Bootcamp</p>
+              </Col>
+            </Row>
+          </Container>
+        </section>
       </main>
 
       <BackToTopButton />
