@@ -42,7 +42,7 @@ export default function Footer() {
                 </Button>
                 <Button variant="outline-light" size="lg">
                   <a
-                    className="text-white"
+                    className="  text-white"
                     href="mailto:u.mert.ozder@gmail.com"
                   >
                     <AiOutlineMail />

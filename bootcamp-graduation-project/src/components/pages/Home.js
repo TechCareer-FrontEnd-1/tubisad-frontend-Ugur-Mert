@@ -60,28 +60,53 @@ const Home = () => {
               <Row className="text-center   ">
                 <h1 className="header-text">Abilities</h1>
               </Row>
-              <Col className="text-center  mx-auto col-12">
+              <Col
+                data-aos="fade-down"
+                data-aos-offset="350"
+                data-aos-easing="ease-in-sine"
+                className="text-center  mx-auto col-12"
+              >
                 <DiReact />
               </Col>
               <Col className="text-center  mx-auto col-3">
                 <Row>
-                  <Col>
+                  <Col
+                    data-aos="fade-right"
+                    data-aos-offset="350"
+                    data-aos-easing="ease-in-sine"
+                  >
                     <DiJqueryLogo />
                   </Col>
-                  <Col>
+                  <Col
+                    data-aos="fade-left"
+                    data-aos-offset="350"
+                    data-aos-easing="ease-in-sine"
+                  >
                     <DiGithubBadge />
                   </Col>
                 </Row>
               </Col>
               <Col className="text-center mx-auto col-4">
                 <Row>
-                  <Col>
+                  <Col
+                    data-aos="fade-right"
+                    data-aos-offset="350"
+                    data-aos-easing="ease-in-sine"
+                  >
                     <AiOutlineHtml5 />
                   </Col>
-                  <Col>
+                  <Col
+                    data-aos="fade-up"
+                    data-aos-offset="350"
+                    data-aos-easing="ease-in-sine"
+                  >
                     <DiCss3 />
                   </Col>
-                  <Col>
+                  <Col
+                    data-aos="fade-left"
+                    data-aos-offset="350"
+                    data-aos-easing="ease-in-sine"
+                  >
                     <DiJavascript1 />
                   </Col>
                 </Row>
