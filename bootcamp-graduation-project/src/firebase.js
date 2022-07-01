@@ -7,6 +7,7 @@ import {
   onAuthStateChanged,
   updateProfile,
   updatePassword,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 import toast from "react-hot-toast";
@@ -73,6 +74,16 @@ export const resetPassword = async (password) => {
   try {
     await updatePassword(auth.currentUser, password);
     toast.success("Password updated");
+    return true;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
+export const resetEmail = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    toast.success("E-mail sent");
     return true;
   } catch (error) {
     toast.error(error.message);

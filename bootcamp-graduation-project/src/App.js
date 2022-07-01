@@ -12,6 +12,7 @@ import AboutMe from "./components/pages/AboutMe";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import MyAccount from "./components/pages/MyAccount";
+import ForgotPassword from "./components/pages/ForgotPassword";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="about" element={<AboutMe />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="resetpassword" element={<ForgotPassword />} />
         <Route path="myaccount" element={<MyAccount />} />
       </Routes>
       <Footer />

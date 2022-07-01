@@ -5,7 +5,7 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 
 import { login } from "../firebase";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -59,14 +59,27 @@ export default function Register() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Form.Group>
-
-              <Button
-                disabled={!email || !password}
-                variant="outline-light"
-                type="submit"
-              >
-                Login
-              </Button>
+              <Col className="text-center">
+                <Button
+                  disabled={!email || !password}
+                  variant="outline-light"
+                  type="submit"
+                >
+                  Login
+                </Button>
+              </Col>
+              <Col className="text-center mt-3">
+                <Link
+                  style={{
+                    color: "white",
+                    cursor: "pointer",
+                    textDecoration: "none",
+                  }}
+                  to="/resetpassword"
+                >
+                  <p style={{ cursor: "pointer" }}>Forgot your password ?</p>
+                </Link>
+              </Col>
             </Form>
           </Col>
         </Row>
