@@ -1,31 +1,41 @@
 import React, { useState } from "react";
 import "./ContactMe.css";
 
+import { db } from "../../firebase";
+import { collection, addDoc } from "firebase/firestore";
+
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import toast from "react-hot-toast";
 
 export default function ContactMe() {
-  const [show, setShow] = useState(false);
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [contactMessage, setContactMessage] = useState("");
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (contactMessage !== "") {
+      await addDoc(collection(db, "messages"), {
+        name,
+        surname,
+        email,
+        phoneNumber,
+        contactMessage,
+      });
+      toast.success(
+        "I have received your message, I will reply as soon as possible."
+      );
+    } else {
+      toast.error("lütfen mesajınızı giriniz");
+    }
+  };
 
   return (
     <main className="contact-container  p-5">
       <Container>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Email sent successfully!</Modal.Title>
-          </Modal.Header>
-
-          <Modal.Footer>
-            <Col className="text-center ">
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-            </Col>
-          </Modal.Footer>
-        </Modal>
         <Row className="text-center  ">
           <p className="m-3 fs-1">CONTACT ME</p>
         </Row>
@@ -38,14 +48,24 @@ export default function ContactMe() {
                 minHeight: "50vh",
               }}
             >
-              <Form>
+              <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="exampleForm.ControlInput1">
                   <Row className="mb-3 mt-5">
                     <Col>
-                      <Form.Control type="text" placeholder="Name" />
+                      <Form.Control
+                        type="text"
+                        placeholder="Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
                     </Col>
                     <Col>
-                      <Form.Control type="text" placeholder="Surname" />
+                      <Form.Control
+                        type="text"
+                        placeholder="Surname"
+                        value={surname}
+                        onChange={(e) => setSurname(e.target.value)}
+                      />
                     </Col>
                   </Row>
                   <Row className="mb-3">
@@ -53,10 +73,17 @@ export default function ContactMe() {
                       <Form.Control
                         type="email"
                         placeholder="name@example.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </Col>
                     <Col className="col-4">
-                      <Form.Control type="number" placeholder="Phone Number" />
+                      <Form.Control
+                        type="tel"
+                        placeholder="Phone Number"
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
+                      />
                     </Col>
                   </Row>
                 </Form.Group>
@@ -68,13 +95,15 @@ export default function ContactMe() {
                     as="textarea"
                     rows={3}
                     placeholder="Your Message"
+                    value={contactMessage}
+                    onChange={(e) => setContactMessage(e.target.value)}
                   />
                   <Row className="mx-auto mt-5 col-6 ">
                     <Col className=" text-center">
                       <Button
-                        onClick={handleShow}
                         variant="outline-dark"
                         className="mb-5"
+                        type="submit"
                       >
                         Send
                       </Button>
