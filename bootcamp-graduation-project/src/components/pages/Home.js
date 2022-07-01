@@ -35,9 +35,7 @@ const Home = () => {
           <Container>
             <Col>
               <Row className="text-center mt-3 text-white ">
-                <h1 className="header-text ">
-                  Welcome to my personal website!
-                </h1>
+                <h1 className="header-text ">Welcome !</h1>
               </Row>
               <Col className="text-center mt-3">
                 <img className="home-img" src={Frontend} alt="fronted" />
