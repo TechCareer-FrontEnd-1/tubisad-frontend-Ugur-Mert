@@ -69,7 +69,7 @@ export default function UserInformation() {
                       </span>
                     </p>
                   ) : (
-                    <Button onClick={handleVerify} variant="outline-dark">
+                    <Button onClick={handleVerify} variant="outline-success">
                       Verify your Account
                     </Button>
                   )}
