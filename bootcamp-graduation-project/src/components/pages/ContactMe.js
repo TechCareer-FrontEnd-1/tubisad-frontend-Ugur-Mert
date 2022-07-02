@@ -47,6 +47,7 @@ export default function ContactMe() {
                 alignItems: "center",
                 minHeight: "50vh",
               }}
+              className="mx-auto"
             >
               <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="exampleForm.ControlInput1">

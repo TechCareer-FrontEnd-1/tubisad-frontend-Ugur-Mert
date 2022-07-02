@@ -51,12 +51,13 @@ export default function UserInformation() {
               <Row className="mt-3">
                 <Col xs={12} sm={12} md={12} lg={6}>
                   Email <br /> {user.email}
+                  <hr className="mt-3" />
                 </Col>
                 <Col xs={12} sm={12} md={12} lg={6}>
                   Name - Surname <br />
                   {user.displayName}
+                  <hr className="mt-3" />
                 </Col>
-                <hr className="mt-3" />
               </Row>
               <Row className="text-center mt-3">
                 <Col>

@@ -95,7 +95,7 @@ const BootstrapNavbar = () => {
               </p>
             </Col>
             <Col className="me-3 text-center text-light">
-              <p>
+              <p style={{ cursor: "pointer" }}>
                 <FaRegClock onClick={() => setShow(!show)} />
               </p>
             </Col>
