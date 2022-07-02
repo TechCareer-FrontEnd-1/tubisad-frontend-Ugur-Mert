@@ -1,7 +1,10 @@
 import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
+
+import Engineering from "../Images/engineering.jpg";
+import FrontendDev from "../Images/frontendDev.jpg";
 
 export default function AboutMe() {
   return (
@@ -10,8 +13,10 @@ export default function AboutMe() {
         <Container>
           <h1 className="text-center pt-5">About Me</h1>
           <Row className="mb-5 ">
-            <Col className="col-6 mt-5">image</Col>
-            <Col className="col-6 mt-5">
+            <Col sm={12} md={6} lg={6} className=" mt-5">
+              <img className="img-fluid" src={Engineering} alt="engineer" />
+            </Col>
+            <Col sm={12} md={6} lg={6} className="align-self-center  mt-5">
               <p>
                 Merhaba! Ben Uğur Mert Özder. Mekatronik mühendisiyim. Yaklaşık
                 4 aydır kendimi geliştirmekteyim. Liseden beri farklı dillerde
@@ -31,10 +36,10 @@ export default function AboutMe() {
         </Container>
       </section>
 
-      <section className="bg-dark text-white">
+      <section className="bg-dark  text-white">
         <Container>
-          <Row className=" pb-5">
-            <Col className="col-6 mt-5">
+          <Row className="pb-5   ">
+            <Col sm={12} md={6} lg={6} className="align-self-center mt-5">
               <h1>Neden yazılım sektörüne yöneldim ?</h1>
               <p>
                 Mühendislikten ziyade yazılım alanında kendimi daha çok
@@ -44,7 +49,13 @@ export default function AboutMe() {
                 heyecanlandırdı.
               </p>
             </Col>
-            <Col className="col-6 mt-5 ">image</Col>
+            <Col sm={12} md={6} lg={6} className=" mt-5 ">
+              <img
+                className="img-fluid rounded"
+                src={FrontendDev}
+                alt="frontend"
+              />
+            </Col>
           </Row>
         </Container>
       </section>
