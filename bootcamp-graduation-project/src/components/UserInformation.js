@@ -1,12 +1,20 @@
 import React from "react";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { GoVerified } from "react-icons/go";
+
 import { useSelector } from "react-redux";
+import { sendVerify } from "../firebase";
 
 export default function UserInformation() {
   const { user } = useSelector((state) => state.auth);
+
+  const handleVerify = async () => {
+    await sendVerify();
+    console.log(user);
+  };
 
   if (user) {
     return (
@@ -47,6 +55,23 @@ export default function UserInformation() {
                 <Col xs={12} sm={12} md={12} lg={6}>
                   Name - Surname <br />
                   {user.displayName}
+                </Col>
+                <hr className="mt-3" />
+              </Row>
+              <Row className="text-center mt-3">
+                <Col>
+                  {user.emailVerified ? (
+                    <p className="text-success">
+                      Verified.{" "}
+                      <span>
+                        <GoVerified className="fs-4" />
+                      </span>
+                    </p>
+                  ) : (
+                    <Button onClick={handleVerify} variant="outline-dark">
+                      Verify your Account
+                    </Button>
+                  )}
                 </Col>
               </Row>
             </Col>

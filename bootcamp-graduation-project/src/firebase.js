@@ -11,6 +11,7 @@ import {
   updateProfile,
   updatePassword,
   sendPasswordResetEmail,
+  sendEmailVerification,
 } from "firebase/auth";
 
 import toast from "react-hot-toast";
@@ -95,6 +96,15 @@ export const resetEmail = async (email) => {
   }
 };
 
+export const sendVerify = async () => {
+  try {
+    await sendEmailVerification(auth.currentUser);
+    toast.success("Verify mail sent");
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
     store.dispatch(
@@ -103,6 +113,7 @@ onAuthStateChanged(auth, (user) => {
         email: user.email,
         photoURL: user.photoURL,
         uid: user.uid,
+        emailVerified: user.emailVerified,
       })
     );
   } else {
