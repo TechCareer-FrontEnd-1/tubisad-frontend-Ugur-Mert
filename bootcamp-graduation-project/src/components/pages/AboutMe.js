@@ -1,7 +1,7 @@
 import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 import Engineering from "../Images/engineering.jpg";
 import FrontendDev from "../Images/frontendDev.jpg";

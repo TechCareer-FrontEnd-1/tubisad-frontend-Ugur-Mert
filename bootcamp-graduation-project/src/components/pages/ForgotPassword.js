@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
+
 import { resetEmail } from "../../firebase";
 
 export default function ForgotPassword() {
