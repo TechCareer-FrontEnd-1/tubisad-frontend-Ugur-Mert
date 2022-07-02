@@ -102,6 +102,7 @@ export default function ContactMe() {
                   <Row className="mx-auto mt-5 col-6 ">
                     <Col className=" text-center">
                       <Button
+                        disabled={!contactMessage || !email}
                         variant="outline-dark"
                         className="mb-5"
                         type="submit"
