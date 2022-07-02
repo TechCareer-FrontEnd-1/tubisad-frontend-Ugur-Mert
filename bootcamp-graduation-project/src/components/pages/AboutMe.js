@@ -42,11 +42,10 @@ export default function AboutMe() {
             <Col sm={12} md={6} lg={6} className="align-self-center mt-5">
               <h1>Neden yazılım sektörüne yöneldim ?</h1>
               <p>
-                Mühendislikten ziyade yazılım alanında kendimi daha çok
-                geliştirebileceğimi düşünüyorum. Bitirmiş olduğum bölümün bana
-                katmış olduğu çok yönlü ve farklı sektörlerde iş imkanı
-                nedeniyle yazılım üzerine yoğunlaşmak beni daha çok
-                heyecanlandırdı.
+                Yazılım alanında kendimi daha çok geliştirebileceğimi
+                düşünüyorum. Bitirmiş olduğum bölümün bana katmış olduğu çok
+                yönlü olmanın gerekleri doğrultusunda yazılımın benim için
+                biçilmiş kaftan olduğu kararına vardım.
               </p>
             </Col>
             <Col sm={12} md={6} lg={6} className=" mt-5 ">
