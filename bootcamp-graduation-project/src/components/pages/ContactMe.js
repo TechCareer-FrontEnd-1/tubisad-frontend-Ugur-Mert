@@ -1,12 +1,14 @@
 import React from "react";
-import { useFormik } from "formik";
 import "./ContactMe.css";
+
+import { useFormik } from "formik";
 
 import { db } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+
 import toast from "react-hot-toast";
 
 export default function ContactMe() {
@@ -39,7 +41,7 @@ export default function ContactMe() {
         <Row className="text-center  ">
           <p className="m-3 fs-1">CONTACT ME</p>
         </Row>
-        <Col sm={12} md={12} lg={6} className="mx-auto bg-secondary   rounded">
+        <Col sm={12} md={12} lg={6} className="mx-auto ">
           <Row className="mx-auto">
             <Row
               style={{
@@ -108,7 +110,7 @@ export default function ContactMe() {
                     <Col className=" text-center">
                       <Button
                         //disabled={!contactMessage || !email}
-                        variant="outline-dark"
+                        variant="outline-success"
                         className="mb-5"
                         type="submit"
                       >
@@ -118,7 +120,7 @@ export default function ContactMe() {
                     <Col className=" text-center">
                       <Button
                         //disabled={!contactMessage || !email}
-                        variant="danger"
+                        variant="outline-danger"
                         className="mb-5"
                         type="reset"
                         onClick={(e) => formik.resetForm()}
