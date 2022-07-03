@@ -26,7 +26,7 @@ export default function UserInformation() {
               alignItems: "center",
               minHeight: "60vh",
             }}
-            className="mb-5 mt-5 p-5  col-12"
+            className="mb-5 mt-5 p-5 mx-auto text-center"
           >
             <Col
               xs={12}
@@ -34,9 +34,9 @@ export default function UserInformation() {
               md={12}
               lg={12}
               xl={6}
-              className="col-6 mx-auto bg-light mx-auto text-black rounded mb-4 p-5"
+              className="mx-auto text-black rounded mb-4 p-5 bg-light"
             >
-              <Row className="align-items-center  text-center">
+              <Row className="align-items-center  mx-auto text-center">
                 <Col className="align-items-center ">
                   {user.photoURL && (
                     <img
