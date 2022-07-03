@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 
+import "./LoginRegister.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
+
 import { register } from "../firebase";
 
 export default function Register() {
@@ -16,15 +19,15 @@ export default function Register() {
   };
 
   return (
-    <section>
-      <Container className="p-5 mt-5  ">
+    <section className="section-register p-5">
+      <Container className="p-5  ">
         <Row
           style={{
             display: "grid",
             alignItems: "center",
             minHeight: "50vh",
           }}
-          className="mx-auto  "
+          className="mx-auto opacity-75 "
         >
           <Col
             sm={12}
