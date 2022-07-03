@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useFormik } from "formik";
 import "./ContactMe.css";
 
 import { db } from "../../firebase";
@@ -9,29 +10,28 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import toast from "react-hot-toast";
 
 export default function ContactMe() {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [contactMessage, setContactMessage] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (contactMessage !== "") {
-      await addDoc(collection(db, "messages"), {
-        name,
-        surname,
-        email,
-        phoneNumber,
-        contactMessage,
-      });
-      toast.success(
-        "I have received your message, I will reply as soon as possible."
-      );
-    } else {
-      toast.error("lütfen mesajınızı giriniz");
-    }
-  };
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      surname: "",
+      email: "",
+      phoneNumber: "",
+      contactMessage: "",
+    },
+    onSubmit: (values) => {
+      if (formik.values.contactMessage !== "" && formik.values.email !== "") {
+        addDoc(collection(db, "messages"), {
+          values,
+        });
+        toast.success(
+          "I have received your message, I will reply as soon as possible."
+        );
+        console.log(values);
+      } else {
+        toast.error("lütfen mesajınızı ve mail adresinizi giriniz");
+      }
+    },
+  });
 
   return (
     <main className="contact-container  p-5">
@@ -49,41 +49,45 @@ export default function ContactMe() {
               }}
               className="mx-auto"
             >
-              <Form onSubmit={handleSubmit}>
+              <Form onSubmit={formik.handleSubmit}>
                 <Form.Group controlId="exampleForm.ControlInput1">
                   <Row className="mb-3 mt-5">
                     <Col>
                       <Form.Control
+                        name="name"
                         type="text"
                         placeholder="Name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
                       />
                     </Col>
                     <Col>
                       <Form.Control
+                        name="surname"
                         type="text"
                         placeholder="Surname"
-                        value={surname}
-                        onChange={(e) => setSurname(e.target.value)}
+                        value={formik.values.surname}
+                        onChange={formik.handleChange}
                       />
                     </Col>
                   </Row>
                   <Row className="mb-3">
                     <Col className="col-8">
                       <Form.Control
+                        name="email"
                         type="email"
-                        placeholder="name@example.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email"
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
                       />
                     </Col>
                     <Col className="col-4">
                       <Form.Control
+                        name="phoneNumber"
                         type="tel"
                         placeholder="Phone Number"
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        value={formik.values.phoneNumber}
+                        onChange={formik.handleChange}
                       />
                     </Col>
                   </Row>
@@ -94,20 +98,32 @@ export default function ContactMe() {
                 >
                   <Form.Control
                     as="textarea"
+                    name="contactMessage"
                     rows={3}
                     placeholder="Your Message"
-                    value={contactMessage}
-                    onChange={(e) => setContactMessage(e.target.value)}
+                    value={formik.values.contactMessage}
+                    onChange={formik.handleChange}
                   />
                   <Row className="mx-auto mt-5 col-6 ">
                     <Col className=" text-center">
                       <Button
-                        disabled={!contactMessage || !email}
+                        //disabled={!contactMessage || !email}
                         variant="outline-dark"
                         className="mb-5"
                         type="submit"
                       >
                         Send
+                      </Button>
+                    </Col>
+                    <Col className=" text-center">
+                      <Button
+                        //disabled={!contactMessage || !email}
+                        variant="danger"
+                        className="mb-5"
+                        type="reset"
+                        onClick={(e) => formik.resetForm()}
+                      >
+                        Reset
                       </Button>
                     </Col>
                   </Row>
