@@ -4,12 +4,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 
 import { update, auth, resetPassword } from "../firebase";
+
 import { useDispatch, useSelector } from "react-redux";
+
 import { login } from "../store/auth";
 
 export default function UpdateProfile() {
   const dispatch = useDispatch();
+
   const { user } = useSelector((state) => state.auth);
+
   const [displayName, setDisplayName] = useState(user.displayName || "");
   const [avatar, setAvatar] = useState(user.photoURL || "");
   const [password, setPassword] = useState("");
