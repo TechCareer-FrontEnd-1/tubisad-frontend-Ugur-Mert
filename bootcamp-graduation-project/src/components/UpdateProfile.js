@@ -59,7 +59,7 @@ export default function UpdateProfile() {
             md={12}
             lg={12}
             xl={6}
-            className="col-12 mx-auto bg-light text-black rounded p-5"
+            className="col-12 mx-auto bg-light text-black rounded-top p-5"
           >
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicText">
@@ -103,7 +103,7 @@ export default function UpdateProfile() {
             md={12}
             lg={12}
             xl={6}
-            className="col-12 mx-auto bg-light text-black rounded p-5"
+            className="col-12 mx-auto bg-light text-black rounded-bottom p-5"
           >
             <Form onSubmit={handleResetSubmit}>
               <Form.Group className="mb-3" controlId="formBasicPasswords">

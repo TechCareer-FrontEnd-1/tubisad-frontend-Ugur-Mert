@@ -26,7 +26,7 @@ export default function UserInformation() {
               alignItems: "center",
               minHeight: "60vh",
             }}
-            className="mb-5 mt-5 p-5 mx-auto text-center"
+            className="mb-5 mt-5 p-5 col-12 mx-auto text-center"
           >
             <Col
               xs={12}
