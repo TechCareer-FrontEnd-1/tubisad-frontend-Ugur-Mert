@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Container, Nav, Col, Row, Button } from "react-bootstrap";
+import {
+  Navbar,
+  Container,
+  Nav,
+  Col,
+  Row,
+  Button,
+  Collapse,
+} from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 
 import { Link } from "react-router-dom";
@@ -201,13 +209,16 @@ const BootstrapNavbar = () => {
                           to="myaccount"
                         >
                           {user.photoURL && (
-                            <img
-                              src={user.photoURL}
-                              className="rounded-circle img-fluid img-thumbnail"
-                              alt="avatar"
-                              style={{ width: "3rem" }}
-                            />
+                            <Col>
+                              <img
+                                src={user.photoURL}
+                                className="rounded-circle img-fluid img-thumbnail"
+                                alt="avatar"
+                                style={{ width: "3rem" }}
+                              />
+                            </Col>
                           )}
+                          <p>{user.displayName}</p>
                         </Link>
                       </Col>
                     </Row>
