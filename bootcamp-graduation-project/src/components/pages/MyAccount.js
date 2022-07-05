@@ -2,8 +2,6 @@ import React from "react";
 
 import "../LoginRegister.css";
 
-import { Container } from "react-bootstrap";
-import Row from "react-bootstrap/Row";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 

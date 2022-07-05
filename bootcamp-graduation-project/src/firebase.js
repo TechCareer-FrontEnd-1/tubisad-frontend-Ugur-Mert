@@ -1,6 +1,15 @@
 import { initializeApp } from "firebase/app";
 
-import { getFirestore } from "firebase/firestore";
+import {
+  getFirestore,
+  addDoc,
+  collection,
+  onSnapshot,
+  doc,
+  query,
+  where,
+  deleteDoc,
+} from "firebase/firestore";
 
 import {
   getAuth,
@@ -18,6 +27,7 @@ import toast from "react-hot-toast";
 
 import store from "./store";
 import { login as loginHandle, logout as logoutHandle } from "./store/auth";
+import { setTodos } from "./store/todos";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -116,9 +126,42 @@ onAuthStateChanged(auth, (user) => {
         emailVerified: user.emailVerified,
       })
     );
+    // Listen to multiple documents in a collection
+    // separate todo list
+    onSnapshot(
+      query(collection(db, "todos"), where("uid", "==", auth.currentUser.uid)),
+      (doc) => {
+        // store.dispatch(setTodos(doc.docs));
+        store.dispatch(
+          setTodos(
+            doc.docs.reduce(
+              (todos, todo) => [...todos, { ...todo.data(), id: todo.id }],
+              []
+            )
+          )
+        );
+      }
+    );
   } else {
     store.dispatch(logoutHandle());
   }
 });
+
+export const addTodo = async (data) => {
+  try {
+    const result = await addDoc(collection(db, "todos"), data);
+    return result.id;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
+export const deleteTodo = async (id) => {
+  try {
+    await deleteDoc(doc(db, "todos", id));
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
 
 export default app;
