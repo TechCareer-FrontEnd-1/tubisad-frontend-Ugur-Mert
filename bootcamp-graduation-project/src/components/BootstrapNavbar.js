@@ -121,22 +121,22 @@ const BootstrapNavbar = () => {
 
           <Row>
             <Col>
-              <Dropdown className="d-inline mx-2 " autoClose="outside">
-                <Dropdown.Toggle
-                  variant="outline-light"
-                  id="dropdown-autoclose-outside"
-                >
-                  <FcTodoList className=" fs-4" />
-                </Dropdown.Toggle>
-                <Dropdown.Menu
-                  style={{
-                    maxHeight: "100vh",
-                    overflowY: "auto",
-                  }}
-                >
-                  {!user ? (
-                    <p className="text-center">Please Login</p>
-                  ) : (
+              {!user ? (
+                ""
+              ) : (
+                <Dropdown className="d-inline mx-2 " autoClose="outside">
+                  <Dropdown.Toggle
+                    variant="outline-light"
+                    id="dropdown-autoclose-outside"
+                  >
+                    <FcTodoList className=" fs-4" />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu
+                    style={{
+                      maxHeight: "100vh",
+                      overflowY: "auto",
+                    }}
+                  >
                     <Col>
                       <Row className="mx-auto text-center">
                         <AddTodo />
@@ -162,9 +162,9 @@ const BootstrapNavbar = () => {
                         ))}
                       </Row>
                     </Col>
-                  )}
-                </Dropdown.Menu>
-              </Dropdown>
+                  </Dropdown.Menu>
+                </Dropdown>
+              )}
             </Col>
             <Col>
               <Dropdown className="d-inline mx-2" autoClose="outside">
