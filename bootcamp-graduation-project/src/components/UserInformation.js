@@ -24,7 +24,7 @@ export default function UserInformation() {
             style={{
               display: "grid",
               alignItems: "center",
-              minHeight: "60vh",
+              minHeight: "80vh",
             }}
             className="mb-5 mt-5 p-5 col-12 mx-auto text-center"
           >

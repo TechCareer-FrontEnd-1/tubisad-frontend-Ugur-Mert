@@ -15,7 +15,7 @@ export default function MyAccount() {
         defaultActiveKey="home"
         transition={false}
         id="noanim-tab-example"
-        className="mb-3  "
+        className="mb-3 mt-5 "
       >
         <Tab eventKey="home" title="User Information">
           <UserInformation />
