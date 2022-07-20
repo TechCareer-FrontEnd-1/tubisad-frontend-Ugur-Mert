@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 
 import { register } from "../firebase";
+import toast from "react-hot-toast";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -15,7 +16,10 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await register(email, password);
-    console.log(user);
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+    toast.success("Hesabınız oluşturuldu giriş yapabilirsiniz!");
   };
 
   return (

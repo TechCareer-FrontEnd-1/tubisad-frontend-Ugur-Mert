@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Navbar,
-  Container,
-  Nav,
-  Col,
-  Row,
-  Button,
-  Collapse,
-} from "react-bootstrap";
+import { Navbar, Container, Nav, Col, Row, Button } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 
 import { Link } from "react-router-dom";
@@ -218,7 +210,11 @@ const BootstrapNavbar = () => {
                               />
                             </Col>
                           )}
-                          <p>{user.displayName}</p>
+                          {user.displayName ? (
+                            <p>{user.displayName}</p>
+                          ) : (
+                            <p>My Account</p>
+                          )}
                         </Link>
                       </Col>
                     </Row>
